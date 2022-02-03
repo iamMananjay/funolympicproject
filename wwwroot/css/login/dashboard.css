@@ -1,0 +1,7 @@
+.home-container-section {
+    display: grid;
+    place-items: center;
+    height: 88%;
+    font-size: 1.5em;
+    color: rgb(194, 192, 192);
+}

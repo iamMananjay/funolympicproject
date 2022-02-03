@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.channel-container-section {
+    background-color: whitesmoke;
+    border: 1px solid #9fa8b9;
+    height: auto;
+    width: 100%;
+    padding: 25px 25px;
+}
+
+.addchannelsection {
+    display: flex;
+    flex-wrap: wrap;
+    /* background-color: red; */
+}
+
+.card {
+    margin: 11px 11px;
+    width: 14rem;
+    height: auto;
+}
+
+.card-img-top {
+    height: 10rem;
+    object-fit: cover;
+}
+
+.card-body {
+    height: auto;
+    padding: 10px;
+}
+
+    .card-body h5 {
+        margin: 0;
+        padding: 1px;
+    }
+
+.card-text {
+    padding: 0;
+    margin: 0 0 5px 0;
+}

@@ -1,0 +1,184 @@
+body {
+    margin: 0;
+    /* padding-top: 40px; */
+    color: #2e323c;
+    background: #f5f6fa;
+    position: relative;
+    height: 100%;
+}
+
+.profile-container-section {
+    /* background-color: red; */
+    height: 88%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 228px;
+}
+
+.account-settings {
+    position: relative;
+}
+
+.imageedit {
+    position: absolute;
+    top: 17%;
+    right: 25%;
+    height: 35px;
+    width: 35px;
+    border-radius: 50px;
+    background-color: #4e73df;
+    color: white;
+    border: unset;
+}
+
+.editbio {
+    width: 100%;
+    border-radius: 15px;
+    background-color: #4e73df;
+    color: white;
+    border: unset;
+    padding: 0.2em;
+}
+
+.account-settings .user-profile {
+    margin: 0 0 1rem 0;
+    padding-bottom: 1rem;
+    text-align: center;
+}
+
+    .account-settings .user-profile .user-avatar {
+        margin: 0 0 1rem 0;
+    }
+
+        .account-settings .user-profile .user-avatar img {
+            width: 90px;
+            height: 90px;
+            border: 1px solid grey;
+            -webkit-border-radius: 100px;
+            -moz-border-radius: 100px;
+            border-radius: 100px;
+        }
+
+    .account-settings .user-profile h5.user-name {
+        margin: 0 0 0.5rem 0;
+    }
+
+    .account-settings .user-profile h6.user-email {
+        margin: 0;
+        font-size: 0.8rem;
+        font-weight: 400;
+        color: #9fa8b9;
+    }
+
+.account-settings .about {
+    margin: 2rem 0 0 0;
+    text-align: center;
+}
+
+    .account-settings .about h5 {
+        margin: 0 0 15px 0;
+        color: #007ae1;
+    }
+
+    .account-settings .about p {
+        font-size: 0.825rem;
+    }
+
+.form-control {
+    border: 1px solid #cfd1d8;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    font-size: 0.825rem;
+    background: #ffffff;
+    color: #2e323c;
+}
+
+@media screen and (min-width: 400px) {
+    .profile-container-section {
+        margin-top: 218px;
+    }
+
+    .imageedit {
+        position: absolute;
+        top: 18%;
+        right: 35%;
+        height: 35px;
+        width: 35px;
+        border-radius: 50px;
+        background-color: #4e73df;
+        color: white;
+        border: unset;
+    }
+}
+
+@media screen and (min-width: 576px) {
+    .profile-container-section {
+        margin-top: 70px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .profile-container-section {
+        margin-top: 74px;
+    }
+
+    .imageedit {
+        position: absolute;
+        top: 18%;
+        right: 42%;
+        height: 35px;
+        width: 35px;
+        border-radius: 50px;
+        background-color: #4e73df;
+        color: white;
+        border: unset;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .profile-container-section {
+        margin-top: unset;
+    }
+
+    .imageedit {
+        position: absolute;
+        top: 14%;
+        right: 15%;
+        height: 35px;
+        width: 35px;
+        border-radius: 50px;
+        background-color: #4e73df;
+        color: white;
+        border: unset;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .imageedit {
+        position: absolute;
+        top: 15%;
+        right: 20%;
+        height: 35px;
+        width: 35px;
+        border-radius: 50px;
+        background-color: #4e73df;
+        color: white;
+        border: unset;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    .imageedit {
+        position: absolute;
+        top: 18%;
+        right: 30%;
+        height: 35px;
+        width: 35px;
+        border-radius: 50px;
+        background-color: #4e73df;
+        color: white;
+        border: unset;
+    }
+}

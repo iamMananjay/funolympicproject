@@ -1,0 +1,108 @@
+﻿@page
+@model LoginModel
+
+@{
+    ViewData["Title"] = "Log in";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Mangement system</title>
+    <!-- css link -->
+    @*<link rel="stylesheet" href="~/css/login.css/style.css">*@
+    <link href="~/css/login/style.css" rel="stylesheet" />
+    <!-- font-awesome link -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <style>
+        .text-danger {
+            color: red;
+            font-size: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form id="account" method="post" class="login-form">
+        <div class="logoofimg">
+            <img src="~/images/Olympicslogo.png" />
+        </div>
+        <div class="input-box">
+            <input asp-for="Input.Email" type="text" class="form-control empty" id="iconified" placeholder="Email">
+        </div>
+        <span asp-validation-for="Input.Email" class="text-danger"></span>
+
+        <div class="input-box">
+            <input asp-for="Input.Password" type="password" class="form-control empty" id="iconified" placeholder="Password">
+        </div>
+        <span asp-validation-for="Input.Password" class="text-danger"></span>
+
+        <label class="remember">
+            <input type="checkbox" name="remember"> Remember me
+        </label>
+
+        <button type="submit" class="login-btn">
+            Login
+        </button>
+
+        <div class="bottom-links">
+            <p> <a id="forgot-password" asp-page="./ForgotPassword">Forgot Password?</a></p>
+           
+            @*<p><a href='#'>Forget Password</a></p>*@
+
+        </div>
+        <div class="bottom-links">
+            <p>Don’t have account? <a class="nav-link" href='/Identity/Account/Register'>Sign Up</a></p>
+            @*<p>Don’t have account? <a asp-controller="Employee" asp-action="CreateOrEdit">Sign Up</a></p>*@
+            @*<button class="main-container-create-section-btn" id="btnAdd">+ Create Employee</button>*@
+
+
+            @*<p>Don’t have account? <button asp-controller="Identity/Account" asp-action="Register">Sign up</button></p>*@
+
+        </div>
+
+
+    </form>
+    <!--<div class="main-conatiner">-->
+    <!-- main-container-start-here -->
+    <!--<div class="login-container-wrapper">-->
+    <!-- login-container-wrapper-start-here -->
+    <!--<div class="login-container-section">-->
+    <!-- login-container-section-start-here -->
+    <!--<div class="login-container-logo">
+        <img src="~/images/logo.png" alt="companylogo">
+    </div>
+    <div class="login-container-form-section">
+        <form id="account" method="post">
+            <input asp-for="Input.Email" type="text" class="form-control empty" id="iconified" placeholder="&#xf007; Email" />
+            <span asp-validation-for="Input.Email" class="text-danger"></span>
+            <input asp-for="Input.Password" type="password" class="form-control empty" id="iconified"
+                   placeholder="&#xf023; Password" />
+            <span asp-validation-for="Input.Password" class="text-danger"></span>
+            <input type="submit" value="Log In" class="loginbtn">
+        </form>
+    </div>-->
+    <!-- login-container-section-end-here -->
+    <!--</div>-->
+    <!-- login-container-wrapper-end-here -->
+    <!--</div>-->
+    <!-- main-container-end-here -->
+    <!--</div>-->
+
+
+
+</body>
+<!-- javascript link -->
+</html>
+@*<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>*@
+@*<script src="./employeemgmt/index.js"></script>*@
+@*<script src="~/js/login.js"></script>*@
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

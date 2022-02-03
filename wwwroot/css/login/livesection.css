@@ -1,0 +1,161 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.live-container-section {
+    height: 88%;
+    /* background-color: yellow; */
+}
+
+.live-conatiner-header-section img {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.live-container-subscribed-section {
+    background-color: white;
+    border: 1px solid gray;
+    margin: unset;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: -4px;
+}
+
+.channel-logo-section {
+    /* background-color: rgb(44, 48, 38); */
+    margin: unset;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 16%;
+}
+
+    .channel-logo-section img {
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+    }
+
+.subcribe-btn {
+    display: grid;
+    place-items: center;
+}
+
+    .subcribe-btn button {
+        background-color: #007ae1;
+        color: whitesmoke;
+        border: unset;
+        padding: 0.4em;
+        font-size: 1.2em;
+        cursor: pointer;
+    }
+/* .video-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30px;
+  visibility: hidden;
+}
+.video-container.show {
+  visibility: visible;
+} */
+
+.video-container {
+    display: grid;
+    grid-template-columns: 65% 35%;
+    padding: 30px;
+    visibility: hidden;
+}
+
+.video {
+    height: auto;
+}
+
+.eachrowofvideo {
+    display: flex;
+    color: black;
+}
+
+.videotitle {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    padding: 8px;
+    text-align: left;
+}
+
+.videolist {
+    padding: 25px;
+    height: auto;
+    position: relative;
+}
+
+.currentVideoTitle {
+    margin: 1em 0;
+}
+
+.commentsection {
+    display: flex;
+    width: 100%;
+    padding-bottom: 1em;
+    border-bottom: 1px solid rgb(0, 0, 0);
+}
+
+.commentuserimage img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: unset;
+    object-fit: cover;
+    margin-right: 1em;
+}
+
+.usercomment {
+    width: 100%;
+}
+
+    .usercomment input[type="text"] {
+        padding: 10px;
+        width: 730px;
+        outline: none;
+    }
+
+    .usercomment input[type="submit"] {
+        padding: 8px 10px;
+        float: right;
+        width: 100px;
+        outline: none;
+        margin-top: 1em;
+        background: #3f5fbd;
+        /* background: linear-gradient(rgba(35, 43, 85, 0.95), rgba(35, 43, 85, 0.95)), url(https://dl.dropboxusercontent.com/u/22006283/preview/codepen/clouds-cloudy-forest-mountain.jpg) no-repeat center center;*/
+        color: white;
+        border: unset;
+        cursor: pointer;
+    }
+
+.livecircle {
+    position: absolute;
+    top: 5.5%;
+    left: 46%;
+    height: 13px;
+    width: 13px;
+    background-color: red;
+    border-radius: 50%;
+}
+
+.allusercommet {
+    margin-top: 2em;
+    display: flex;
+}
+
+.eachusercomment {
+    /* background-color: blanchedalmond; */
+    padding: 0.5em;
+}
+
+.video-container.show {
+    visibility: visible;
+}

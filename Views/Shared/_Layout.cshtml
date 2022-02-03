@@ -1,0 +1,120 @@
+﻿@*@model EmployeeManagement.Areas.Identity.Data.ApplicationUserViewModel*@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- css link -->
+   
+    <link href="~/css/login/dashboard.css" rel="stylesheet" />
+    <link href="~/css/login/layout.css" rel="stylesheet" />
+    <!-- font-awesome link -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" rel="stylesheet" />
+    <title>@ViewData["Title"] - EmployeeManagement</title>
+    @using Microsoft.AspNetCore.Identity
+    @using EmployeeManagement.Areas.Identity.Data
+    @inject SignInManager<ApplicationUser> SignInManager
+    @inject UserManager<ApplicationUser> UserManager
+    @using Microsoft.AspNetCore.Http
+    @inject IHttpContextAccessor HttpContextAccessor
+</head>
+<body>
+    @{
+        string role = HttpContextAccessor.HttpContext.Session.GetString("Role");
+    }
+
+    <!-- employeelist-wrapper -->
+    <!-- employeelist-wrapper -->
+    <div class="wrapper">
+        <!-- employeelist-slidebar -->
+        <div id="sbar" class="sidebar">
+            <!-- employeelist-sidebar-company-logo-section -->
+            <div class="sidebar-company-logo-section">
+                <img src="~/images/Olympicslogo.png" alt="company logo">
+                <button class="sidebar-close-btn"><i class="fas fa-times"></i></button>
+            </div>
+            <!-- employeelist-sidebar-company-logo-section -->
+            <div class="sidenav-container">
+
+
+                <div class="sidenav-header-tag">
+                    <a asp-controller="Home" asp-action="Index"> Home</a>
+
+                </div>
+                <div class="sidenav-header-tag">
+                    <a asp-controller="Employee" asp-action="Index">Channel</a>
+
+                </div>
+
+                @if (role == "Employee")
+
+                {
+                    <div class="sidenav-header-tag">
+                        <a asp-controller="Leave" asp-action="Index">Feedback</a>
+
+                    </div>
+                }
+
+                @if (role == "Admin")
+
+                {
+                    <div class="sidenav-header-tag">
+                        <a asp-controller="ApplicationUser" asp-action="Index">Userlist</a>
+
+                    </div>
+                }
+
+            </div>
+
+        </div>
+        <!-- employeelist-wrapper end here -->
+        <!-- employeelist-main-container -->
+        <div class="main-container ">
+            @if (SignInManager.IsSignedIn(User))
+            {
+                @*@Model.UserName*@
+                <div class="main-container-header-section">
+                    <div class="main-container-sidebar-section">
+                        <button class="main-container-sidebar-btn sidebarOpen"><i class="fas fa-bars"></i></button>
+                    </div>
+                    <div class="main-container-image-section" @*style="display: flex;"*@>
+                        <h1>@UserManager.GetUserAsync(User).Result.UserName </h1>
+                        <img src="~/images/defaultuserimg.png" alt="userimage">
+                    </div>
+                </div>
+
+                <!-- logout section start -->
+                <div class="main-container-logout-section">
+                    <!-- employeelist-user-profile-img -->
+                    <div class="main-container-user-profile-img">
+                        <img src="~/images/defaultuserimg.png" alt="userimage">
+                        <button class="main-container-logout-section-close-btn"><i class="fas fa-times"></i></button>
+                    </div>
+                    <!-- employeelist-user-profile-img -->
+                    <h3>@UserManager.GetUserAsync(User).Result.UserName </h3>
+
+                    <h3 class="main-container-user-email">@UserManager.GetUserAsync(User).Result.Email</h3>
+                    <button class="main-container-manage-account">
+                        <a asp-controller="Holiday" asp-action="Index" asp-route-id="@UserManager.GetUserAsync(User).Result.Id">Manage Your Account</a>
+                    </button>
+                    <a style="text-decoration: none;" asp-area="Identity" asp-page="/Account/Login">
+                        <button class="main-container-logout-btn"> Sign Out</button>
+                    </a>
+                    <!-- employeelist-logout-footer-section -->
+                    <div class="main-container-logout-footer-section">
+                        <h3>Privacy Policy</h3>
+                    </div>
+                    <!-- employeelist-logout-footer-section -->
+                </div>
+            }
+
+
+            <!-- logout section end -->
+            @RenderBody()
+        </div>
+    </div>
+    <script src="~/js/layout.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
